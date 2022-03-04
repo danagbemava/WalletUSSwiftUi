@@ -11,8 +11,8 @@ import SwiftUI
 
 struct ColorConstants {
     
-    let primaryBlue = Color(hex: "#3862F8")
-    let fadedBlue = Color(hex: "#E7EEEFE")
-    let customBlack = Color(hex: "#060F27")
-    let customGrey = Color(hex: "#989898")
+    static let primaryBlue = Color(hex: "#3862F8")
+    static let fadedBlue = Color(hex: "#E7EEEFE")
+    static let customBlack = Color(hex: "#060F27")
+    static let customGrey = Color(hex: "#989898")
 }
