@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @State var loginLinkIsActive: Bool = false
+    
     var body: some View {
-        NavigationView {
-            VStack(alignment: .center) {
+//        NavigationView {
+            VStack {
                 VStack {
                     Text("walletus")
                         .padding()
@@ -18,17 +21,19 @@ struct OnboardingView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Text("Be in control of your money")
-                        .padding()
+                        .padding(.horizontal, 16)
                         .font(.largeTitle.bold())
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 
+                Spacer()
                 
                 Image("onboarding")
                     .resizable()
-                    .frame(maxWidth: 300, maxHeight: 400, alignment: .center)
+                    .frame(maxWidth: 300, maxHeight: 300, alignment: .center)
                     .padding()
-
+                
+                Spacer()
                 
                 VStack {
                     Button {} label: {
@@ -38,24 +43,27 @@ struct OnboardingView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 20)
-                    
                     .background(ColorConstants.primaryBlue)
                     .cornerRadius(16)
                     
-                    Button {} label: {
-                            Text("Sign In")
-                                .foregroundColor(.black)
-                                .font(.body.bold())
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 20)
+                    NavigationLink(destination: LoginView(),isActive: $loginLinkIsActive ) {
+                        Button {
+                            loginLinkIsActive.toggle()
+                        } label: {
+                                Text("Sign In")
+                                    .foregroundColor(.black)
+                                    .font(.body.bold())
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 20)
                         .cornerRadius(16)
+                    }
                     
                 }.padding(.horizontal, 16)
                 
                 Spacer()
-            }
-        }
+            }.navigationBarHidden(true)
+//        }
     }
 }
 

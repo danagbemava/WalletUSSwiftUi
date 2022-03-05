@@ -15,6 +15,7 @@
 		FA59BBD327D2A0B800159DD7 /* CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59BBD227D2A0B800159DD7 /* CustomExtensions.swift */; };
 		FA59BBDD27D2A3F300159DD7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59BBDC27D2A3F300159DD7 /* OnboardingView.swift */; };
 		FA59BBE127D2A8FA00159DD7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59BBE027D2A8FA00159DD7 /* LoginView.swift */; };
+		FA59BBE927D2C23D00159DD7 /* BaseDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA59BBE827D2C23D00159DD7 /* BaseDashboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		FA59BBD227D2A0B800159DD7 /* CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExtensions.swift; sourceTree = "<group>"; };
 		FA59BBDC27D2A3F300159DD7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		FA59BBE027D2A8FA00159DD7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FA59BBE827D2C23D00159DD7 /* BaseDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDashboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		FA43A9D627D2332E0082D837 /* WalletUS */ = {
 			isa = PBXGroup;
 			children = (
+				FA59BBE227D2B43D00159DD7 /* Shared */,
 				FA59BBD427D2A31400159DD7 /* Features */,
 				FA59BBD127D2A0A500159DD7 /* Utils */,
 				FA43A9D727D2332E0082D837 /* WalletUSApp.swift */,
@@ -89,6 +92,7 @@
 		FA59BBD427D2A31400159DD7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				FA59BBE627D2C14E00159DD7 /* Dashboard */,
 				FA59BBD927D2A3B900159DD7 /* Onboarding */,
 				FA59BBD527D2A31D00159DD7 /* Auth */,
 			);
@@ -149,6 +153,37 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FA59BBE227D2B43D00159DD7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA59BBE327D2B44B00159DD7 /* Components */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FA59BBE327D2B44B00159DD7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FA59BBE627D2C14E00159DD7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				FA59BBE727D2C15700159DD7 /* Views */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		FA59BBE727D2C15700159DD7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA59BBE827D2C23D00159DD7 /* BaseDashboardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA59BBE127D2A8FA00159DD7 /* LoginView.swift in Sources */,
+				FA59BBE927D2C23D00159DD7 /* BaseDashboardView.swift in Sources */,
 				FA59BBD327D2A0B800159DD7 /* CustomExtensions.swift in Sources */,
 				FA59BBCF27D2A03400159DD7 /* ColorConstants.swift in Sources */,
 				FA43A9DA27D2332E0082D837 /* ContentView.swift in Sources */,
