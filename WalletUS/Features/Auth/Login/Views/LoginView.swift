@@ -14,8 +14,12 @@ struct LoginView: View {
     
     @State private var loginButtonActive: Bool = false
     
+    @StateObject private var loginViewModel: LoginViewModel = LoginViewModel()
+    
+    @EnvironmentObject var appNavigationState: NavigationStateObserver
+    
     var body: some View {
-//        NavigationView {
+        NavigationView {
             VStack (alignment: .center) {
                 Text("Sign in to your account")
                     .font(.title2)
@@ -71,9 +75,11 @@ struct LoginView: View {
                         .font(.system(size: 14))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    NavigationLink(destination: BaseDashboardView(), isActive: $loginButtonActive) {
+//                    NavigationLink(destination: BaseDashboardView(), isActive: $loginViewModel.navigateToHome) {
                         Button {
-                            loginButtonActive = true
+                            loginViewModel.doSomeDelay(onSuccess: {
+                                appNavigationState.updateNavigationState(newState: .dashboard)
+                            })
                         } label: {
                             Text("Sign in")
                                 .font(.body.bold())
@@ -82,8 +88,9 @@ struct LoginView: View {
                         .padding(.vertical, 16)
                         .background(ColorConstants.primaryBlue)
                         .foregroundColor(.white)
-                    .cornerRadius(16)
-                    }
+                        .cornerRadius(16)
+                    
+//                    }
                     
                     
                 }
@@ -119,7 +126,7 @@ struct LoginView: View {
                 }.padding()
                 Spacer()
             }.navigationBarHidden(true)
-//        }
+        }
     }
 }
 

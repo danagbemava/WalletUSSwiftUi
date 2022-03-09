@@ -11,6 +11,8 @@ struct OnboardingView: View {
     
     @State var loginLinkIsActive: Bool = false
     
+    @EnvironmentObject var appNavigationObserver: NavigationStateObserver
+    
     var body: some View {
 //        NavigationView {
             VStack {
@@ -46,9 +48,10 @@ struct OnboardingView: View {
                     .background(ColorConstants.primaryBlue)
                     .cornerRadius(16)
                     
-                    NavigationLink(destination: LoginView(),isActive: $loginLinkIsActive ) {
+//                    NavigationLink(destination: LoginView(),isActive: $loginLinkIsActive ) {
                         Button {
-                            loginLinkIsActive.toggle()
+//                            loginLinkIsActive.toggle()
+                            appNavigationObserver.updateNavigationState(newState: .auth)
                         } label: {
                                 Text("Sign In")
                                     .foregroundColor(.black)
@@ -57,7 +60,7 @@ struct OnboardingView: View {
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 20)
                         .cornerRadius(16)
-                    }
+//                    }
                     
                 }.padding(.horizontal, 16)
                 

@@ -14,22 +14,22 @@ struct BaseDashboardView: View {
             TabView {
                 Text("Placeholder 1")
                     .tabItem {
-                        Image(systemName: "house")
+                        Label("Dashboard", systemImage: "house")
                     }
                 
                 Text("Placeholder 2")
                     .tabItem {
-                        Image(systemName: "chart.bar")
+                        Label("Spending", systemImage: "chart.bar")
                     }
                 
                 Text("Placeholder 3")
                     .tabItem {
-                        Image(systemName: "clock")
+                        Label("History", systemImage: "clock")
                     }
                 
                 Text("Placeholder 4")
                     .tabItem {
-                        Image(systemName: "creditcard")
+                        Label("Cards", systemImage: "creditcard")
                     }
                 
             }.navigationBarHidden(true)

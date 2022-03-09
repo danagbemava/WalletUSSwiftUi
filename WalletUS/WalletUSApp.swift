@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct WalletUSApp: App {
+    
+    @StateObject var appNavigationState: NavigationStateObserver = NavigationStateObserver()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+           
+            switch appNavigationState.currentNavigationState {
+                case .onboarding: ContentView().environmentObject(appNavigationState)
+                case .auth: LoginView().environmentObject(appNavigationState)
+                case .dashboard: BaseDashboardView()
+                        .environmentObject(appNavigationState)
+                        
+            }
+    
         }
     }
 }
