@@ -12,6 +12,7 @@ struct ActionItemView: View {
     let color: Color
     let title: String
     let icon: String
+    var onPressed: () -> ()
     
     var body: some View {
         VStack(alignment: .center) {
@@ -26,11 +27,14 @@ struct ActionItemView: View {
         .frame(height: 80)
         .background(color.opacity(0.3))
         .clipShape(RoundedRectangle(cornerRadius: 8))
+        .onTapGesture {
+            onPressed()
+        }
     }
 }
 
 struct ActionItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ActionItemView(color: .blue, title: "Send", icon: "paperplane")
+        ActionItemView(color: .blue, title: "Send", icon: "paperplane", onPressed: {})
     }
 }

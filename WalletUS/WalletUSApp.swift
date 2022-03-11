@@ -15,15 +15,14 @@ struct WalletUSApp: App {
     var body: some Scene {
         WindowGroup {
             
-           
             switch appNavigationState.currentNavigationState {
                 case .onboarding: ContentView().environmentObject(appNavigationState)
                 case .auth: LoginView().environmentObject(appNavigationState)
                 case .dashboard: BaseDashboardView()
                         .environmentObject(appNavigationState)
-                        
+                    
             }
-    
+            
         }
     }
 }

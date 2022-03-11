@@ -12,7 +12,7 @@ struct BaseDashboardView: View {
         NavigationView {
             
             TabView {
-                Text("Placeholder 1")
+                DashboardView()
                     .tabItem {
                         Label("Dashboard", systemImage: "house")
                     }
